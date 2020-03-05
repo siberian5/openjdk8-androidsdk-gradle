@@ -15,4 +15,4 @@ jobs:
     - name: Project build
       run: |
         docker build -t test/test . 
-        docker run test/test
+        docker run test/test "echo hello!"

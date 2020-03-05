@@ -1,0 +1,18 @@
+name: CI-DEV
+
+on:
+  push:
+    branches: [dev]
+    
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Project build
+      run: |
+        docker build -t test/test . 
+        docker run test/test

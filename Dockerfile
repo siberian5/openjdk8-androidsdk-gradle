@@ -17,8 +17,8 @@ unzip -q -d /usr/local/lib/android-sdk-linux /tmp/commandlinetools.zip  && \
 rm -rf /tmp/commandlinetools.zip                                   && \
 rm -rf /var/lib/apt/lists/*                                        && \
                                                                       \
-echo y | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager "platforms;android-${ANDROID_COMPILE_SDK}" >/dev/null                   && \
-echo y | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager "platform-tools" >/dev/null                                             && \
-echo y | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager "build-tools;${ANDROID_BUILD_TOOLS}" >/dev/null                         && \
-yes | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --licenses >/dev/null 
+echo y | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux "platforms;android-${ANDROID_COMPILE_SDK}" >/dev/null                   && \
+echo y | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux "platform-tools" >/dev/null                                             && \
+echo y | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux "build-tools;${ANDROID_BUILD_TOOLS}" >/dev/null                         && \
+yes | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux --licenses >/dev/null 
 

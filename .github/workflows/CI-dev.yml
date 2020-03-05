@@ -15,4 +15,4 @@ jobs:
     - name: Project build
       run: |
         docker build -t test/test . 
-        docker run test/test echo hello from image! ; echo andoid commandline-tools-version ; /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux --version
+        docker run test/test /test

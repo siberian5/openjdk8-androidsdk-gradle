@@ -1,4 +1,5 @@
-FROM openjdk:8-jdk
+FROM ubuntu
+#FROM openjdk:8-jdk
 
 LABEL maintainer="maxim.yerofeyev@gmail.com"
 
@@ -12,7 +13,7 @@ ARG  GRADLE_VERSION="6.2.2"
 ENV  ANDROID_HOME=/usr/local/lib/android-sdk-linux
 ENV  PATH=$PATH:/usr/local/lib/android-sdk-linux/platform-tools/:/usr/local/lib/gradle/bin
 
-RUN apt-get --quiet update --yes                                   && \
+RUN apt-get --quiet update --yes  && apt-get --quiet install openjdk-8-jdk-headless && \
                                                                       \
 wget --quiet --output-document=/tmp/commandlinetools.zip https://dl.google.com/android/repository/commandlinetools-linux-${ANDROID_COMMANDLINE_TOOLS}_latest.zip && \
 unzip -q -d /usr/local/lib/android-sdk-linux /tmp/commandlinetools.zip  && \

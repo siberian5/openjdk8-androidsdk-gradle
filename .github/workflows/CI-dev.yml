@@ -15,4 +15,4 @@ jobs:
     - name: Project build
       run: |
         docker build -t test/test . 
-        docker run test/test sh /test
+        docker run --rm test/test sh -c ' echo ; java -version ; echo ; echo android commandline-tools-version ; /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux --vers    ion; gradle -version ; /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux --list ' 

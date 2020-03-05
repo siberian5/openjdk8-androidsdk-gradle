@@ -1,5 +1,4 @@
 FROM ubuntu
-#FROM openjdk:8-jdk
 
 LABEL maintainer="maxim.yerofeyev@gmail.com"
 
@@ -31,4 +30,4 @@ echo y | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/l
 echo y | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux "build-tools;${ANDROID_BUILD_TOOLS}" >/dev/null
 
 RUN yes | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux --licenses >/dev/null 
-RUN echo "echo ; java -version ; echo ; echo android commandline-tools-version ; /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux --version; gradle -version ; /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux --list " > /test
+

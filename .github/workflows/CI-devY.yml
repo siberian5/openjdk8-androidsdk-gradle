@@ -14,4 +14,4 @@ jobs:
     - uses: actions/checkout@v2
     - name: Project build
       run: |
-        docker run ubuntu pwd
+        docker run ubuntu sh -c "apt update; apt-cache search openjdk | grep openjdk"

@@ -31,7 +31,6 @@ echo y | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/l
 
 RUN yes | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux --licenses >/dev/null 
 RUN echo "echo android commandline-tools-version ; /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux --version ; gradle -version" > /test
-RUN echo "apt update ; apt-cache search openjdk | grep openjdk" > /test2
 
 # RUN echo "echo android commandline-tools-version ; /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux --version ; /usr/local/lib/gradle/bin/gradle -version" > /test
 

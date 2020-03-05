@@ -14,4 +14,4 @@ jobs:
     - uses: actions/checkout@v2
     - name: Project build
       run: |
-        docker run ubuntu ls -la  /
+        docker run ubuntu pwd

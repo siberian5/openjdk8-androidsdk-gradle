@@ -5,10 +5,10 @@ LABEL maintainer="maxim.yerofeyev@gmail.com"
 
 ARG  ANDROID_COMPILE_SDK="29"
 ARG  ANDROID_BUILD_TOOLS="29.0.3"
+
+# got from https://developer.android.com/studio/index.html#command-tools
 ARG  ANDROID_COMMANDLINE_TOOLS="6200805"
 ARG  GRADLE_VERSION="6.2.2"
-
-#ARG  ANDROID_SDK_TOOLS="4333796"
 
 ENV  ANDROID_HOME=/usr/local/lib/android-sdk-linux
 ENV  PATH=$PATH:/usr/local/lib/android-sdk-linux/platform-tools/:/usr/local/lib/gradle/bin
@@ -31,4 +31,4 @@ echo y | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/l
 echo y | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux "build-tools;${ANDROID_BUILD_TOOLS}" >/dev/null
 
 RUN yes | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux --licenses >/dev/null 
-RUN echo "echo ; java -version ; echo ; echo android commandline-tools-version ; alias sdkmanager='/usr/local/lib/android-sdk-linux/tools/bin/sdkmanage --sdk_root=/usr/local/lib/android-sdk-linux' ; sdkmanager --version ; gradle -version ; sdkmanager --list" > /test
+RUN echo "echo ; java -version ; echo ; echo android commandline-tools-version ; alias sdkmanager='/usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux' ; sdkmanager --version ; gradle -version ; sdkmanager --list" > /test

@@ -31,4 +31,4 @@ echo y | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/l
 echo y | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux "build-tools;${ANDROID_BUILD_TOOLS}" >/dev/null
 
 RUN yes | /usr/local/lib/android-sdk-linux/tools/bin/sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux --licenses >/dev/null 
-RUN echo "echo ; java -version ; echo ; echo android commandline-tools-version ; alias sdkmanager = sdkmanager --sdk_root=/usr/local/lib/android-sdk-linux ; sdkmanager --version ; gradle -version ; sdkmanager --list" > /test
+RUN echo "echo ; java -version ; echo ; echo android commandline-tools-version ; alias sdkmanager = /usr/local/lib/android-sdk-linux/tools/bin/sdkmanage --sdk_root=/usr/local/lib/android-sdk-linux ; sdkmanager --version ; gradle -version ; sdkmanager --list" > /test
